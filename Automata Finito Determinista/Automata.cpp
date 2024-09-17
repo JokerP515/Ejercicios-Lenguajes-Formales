@@ -34,8 +34,10 @@ string verify(unordered_map<string, unordered_map<char,string>>& listAdj,string&
     for(char& c : cad){
         if(listAdj[actualS].find(c) != listAdj[actualS].end()){
             actualS = listAdj[actualS][c];
+        }else if(c=='&'){
+            continue;    
         }else{
-            k=false; //It will give problems if lambda = &
+            k=false;
             break;
         }
     }
